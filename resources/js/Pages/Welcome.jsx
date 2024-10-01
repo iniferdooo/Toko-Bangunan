@@ -17,7 +17,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     <Navbar />
                 </div>
 
-                <div class="bg-center bg-no-repeat bg-[url('https://www.google.com/url?sa=i&url=https%3A%2F%2Ftokobangunansbb.com%2Ftoko-depo-bangunan-terdekat-surabaya%2F&psig=AOvVaw1VKcPAZG8uy3RC6Vl7vwGs&ust=1727443234878000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDY0NfZ4IgDFQAAAAAdAAAAABAJ')] bg-gray-700 bg-blend-multiply h-screen">
+                <div class="bg-center bg-no-repeat bg-[url('/bg.jpg')] bg-cover bg-gray-700 bg-blend-multiply min-h-screen">
                     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
                         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                             Ferdo Bangun Sejahtera
@@ -28,7 +28,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                             <a
                                 href="cari-barang"
-                                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gradient-to-r from-green-500 to-teal-600 hover:bg-teal-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                             >
                                 Cari Barang
                                 <svg

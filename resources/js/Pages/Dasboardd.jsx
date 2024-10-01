@@ -5,10 +5,10 @@ export default function Dashboardd() {
         <>
             <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
                 <div>
-                    <Navbar/>
+                    <Navbar />
                 </div>
 
-                <div className="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply h-screen">
+                <div className="bg-center bg-no-repeat bg-[url('bg.jpg')] bg-cover bg-gray-700 bg-blend-multiply h-screen">
                     <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
                         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                             Ferdo Bangun Sejahtera
@@ -26,14 +26,15 @@ export default function Dashboardd() {
                                     />
                                 </a>
                                 <div className="p-5">
+                                    <img src="/cat.jpg" alt="" width={130} />
                                     <a href="#">
                                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                             Cat
                                         </h5>
                                     </a>
                                     <a
-                                        href="#"
-                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        href={route("cat.index")}
+                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-green-500 to-teal-600 rounded-lg hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     >
                                         Lihat
                                         <svg
@@ -64,14 +65,19 @@ export default function Dashboardd() {
                                     />
                                 </a>
                                 <div className="p-5">
+                                    <img
+                                        src="/keramik.png"
+                                        alt=""
+                                        width={130}
+                                    />
                                     <a href="#">
                                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                             Keramik
                                         </h5>
                                     </a>
                                     <a
-                                        href="#"
-                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        href={route("keramik.index")}
+                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-green-500 to-teal-600 rounded-lg hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     >
                                         Lihat
                                         <svg
@@ -102,15 +108,15 @@ export default function Dashboardd() {
                                     />
                                 </a>
                                 <div className="p-5">
-                                    <img src="" alt="" />
+                                    <img src="semen.jpg" alt="" width={130} />
                                     <a href="#">
                                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                             Semen
                                         </h5>
                                     </a>
                                     <a
-                                        href="#"
-                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        href={route("semen.index")}
+                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-green-500 to-teal-600 rounded-lg hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     >
                                         Lihat
                                         <svg

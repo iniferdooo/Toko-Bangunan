@@ -99,7 +99,7 @@ export default function Login({ status, canResetPassword }) {
                             onClick={() => {
                                 router.get("/");
                             }}
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            class="text-white bg-gradient-to-r from-green-500 to-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         >
                             kembali
                         </button>
@@ -107,7 +107,10 @@ export default function Login({ status, canResetPassword }) {
                             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                                 Sign in to your account
                             </h1>
-                            <form class="space-y-4 md:space-y-6" action="#">
+                            <form
+                                class="space-y-4 md:space-y-6"
+                                onSubmit={submit}
+                            >
                                 <div>
                                     <label
                                         for="email"
@@ -119,6 +122,10 @@ export default function Login({ status, canResetPassword }) {
                                         type="email"
                                         name="email"
                                         id="email"
+                                        value={data.email}
+                                        onChange={(e) =>
+                                            setData("email", e.target.value)
+                                        }
                                         class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="name@company.com"
                                         required=""
@@ -136,6 +143,10 @@ export default function Login({ status, canResetPassword }) {
                                         name="password"
                                         id="password"
                                         placeholder="••••••••"
+                                        value={data.password}
+                                        onChange={(e) =>
+                                            setData("password", e.target.value)
+                                        }
                                         class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         required=""
                                     />
@@ -162,17 +173,17 @@ export default function Login({ status, canResetPassword }) {
                                     </div>
                                     <a
                                         href={route("password.request")}
-                                        class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                                        class="text-sm font-medium text-teal-700 hover:underline dark:text-primary-500"
                                     >
                                         Forgot password?
                                     </a>
                                 </div>
                                 <button
-                                    type="button"
-                                    onClick={() => {
-                                        submit;
-                                    }}
-                                    class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                                    type="submit"
+                                    // onClick={() => {
+                                    //     submit;
+                                    // }}
+                                    class="w-full text-white bg-gradient-to-r from-green-500 to-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                                 >
                                     Sign in
                                 </button>
@@ -183,7 +194,7 @@ export default function Login({ status, canResetPassword }) {
                                         onClick={() => {
                                             router.get(route("register"));
                                         }}
-                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        class="text-white bg-gradient-to-r from-green-500 to-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     >
                                         Register
                                     </button>
