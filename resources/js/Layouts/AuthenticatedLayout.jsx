@@ -17,10 +17,7 @@ export default function Authenticated({ header, children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink
-                                    href={"/"}
-                                    active={"/"}
-                                >
+                                <NavLink href={"/"} active={"/"}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -193,7 +190,7 @@ export default function Authenticated({ header, children }) {
                         <ul className="space-y-2 font-medium">
                             <li>
                                 <a
-                                    href="#"
+                                    href={route('dashboard')}
                                     className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                 >
                                     <svg
@@ -209,7 +206,7 @@ export default function Authenticated({ header, children }) {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href={route("barangterjual.index")}
                                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                                 >
                                     <svg

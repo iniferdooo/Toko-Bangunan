@@ -80,10 +80,21 @@ class KeranjangController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+ * Remove the specified resource from storage.
+ */
+public function destroy(string $id)
+{
+    // Mencari item keranjang berdasarkan ID dan user yang sedang login
+    $keranjang = Keranjang::where('id', $id)->where('user_id', Auth::id())->first();
+
+    // Jika item keranjang ditemukan, hapus item tersebut
+    if ($keranjang) {
+        $keranjang->delete();
+        return redirect()->back()->with('message', 'Item berhasil dihapus dari keranjang.');
     }
+
+    // Jika item keranjang tidak ditemukan
+    return redirect()->back()->with('error', 'Item tidak ditemukan di keranjang.');
+}
+
 }

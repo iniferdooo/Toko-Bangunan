@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BantuanController;
+use App\Http\Controllers\BarangTerjualController;
 use App\Http\Controllers\CariBarangController;
 use App\Http\Controllers\CatController;
 use App\Http\Controllers\KeramikController;
@@ -32,8 +33,8 @@ Route::get('/keramik',[KeramikController::class,'index'])->name('keramik.index')
 Route::get('/About',[AboutController::class,'index'])->name('About.index');
 Route::get('/Bantuan',[BantuanController::class,'index'])->name('Bantuan.index');
 Route::get('/Keranjang',[KeranjangController::class,'index'])->name('keranjang.index');
-Route::delete('/keranjang/{id}', [KeranjangController::class, 'hapusItem'])->name('keranjang.hapus');
-
+Route::post('/keranjang/{id}', [KeranjangController::class, 'destroy'])->name('keranjang.hapus');
+Route::get('/barangterjual', [BarangTerjualController::class, 'index'])->name('barangterjual.index');
 
 // Rute untuk menambahkan barang ke keranjang
 Route::post('/keranjang', [KeranjangController::class, 'store'])->middleware('auth');

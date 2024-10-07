@@ -1,5 +1,6 @@
 import Navbar from "@/Components/tamu/navbar";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Keranjang({ keranjang, totalPrice }) {
     const [items, setItems] = useState(keranjang);
@@ -7,10 +8,21 @@ export default function Keranjang({ keranjang, totalPrice }) {
     const [paymentMethod, setPaymentMethod] = useState("");
 
     // Fungsi untuk menghapus barang
-    const handleRemove = (id) => {
-        const updatedItems = items.filter((item) => item.id !== id);
-        setItems(updatedItems);
+    const handleRemove = async (id) => {
+        try {
+            // Mengirim permintaan DELETE ke backend
+            await axios.post(`/keranjang/${id}`);
+
+            // Memperbarui state setelah item dihapus
+            const updatedItems = items.filter((item) => item.id !== id);
+            setItems(updatedItems);
+        } catch (error) {
+            console.error("Error removing item from cart:", error);
+            // Tampilkan pesan kesalahan jika diperlukan
+        }
     };
+
+    console.log(keranjang);
 
     // Fungsi untuk mengubah jumlah barang
     const handleQuantityChange = (id, newQuantity) => {
