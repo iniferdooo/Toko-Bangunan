@@ -9,6 +9,7 @@ use App\Http\Controllers\KeramikController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SemenController;
+use App\Http\Controllers\TambahBarangController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,6 +36,10 @@ Route::get('/Bantuan',[BantuanController::class,'index'])->name('Bantuan.index')
 Route::get('/Keranjang',[KeranjangController::class,'index'])->name('keranjang.index');
 Route::post('/keranjang/{id}', [KeranjangController::class, 'destroy'])->name('keranjang.hapus');
 Route::get('/barangterjual', [BarangTerjualController::class, 'index'])->name('barangterjual.index');
+Route::get('/TambahBarang', [TambahBarangController::class, 'index'])->name('TambahBarang.index');
+Route::post('/TambahBarang', [TambahBarangController::class, 'store'])->name('barang.store');
+Route::post('/keranjang/checkout', [KeranjangController::class, 'checkout'])->name('keranjang.checkout');
+
 
 // Rute untuk menambahkan barang ke keranjang
 Route::post('/keranjang', [KeranjangController::class, 'store'])->middleware('auth');

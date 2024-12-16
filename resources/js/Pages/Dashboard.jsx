@@ -1,5 +1,13 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
+import {
+    FiPackage,
+    FiShoppingCart,
+    FiUsers,
+    FiDollarSign,
+    FiBell,
+    FiUser,
+} from "react-icons/fi";
 
 export default function Dashboard() {
     return (
@@ -12,80 +20,140 @@ export default function Dashboard() {
         >
             <Head title="Dashboard" />
 
-            <div className="p-4 sm:ml-64">
-                <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        {/* Total Sales Card */}
-                        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-                            <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                                Total Sales
-                            </h3>
-                            <p className="text-2xl font-bold text-green-600 mt-2">
-                                Rp 12,000,000
-                            </p>
+            <div className="flex h-screen bg-gray-50">
+                {/* Main Content */}
+                <main className="flex-1 p-8 space-y-6">
+                    {/* Header */}
+                    <header className="flex justify-between items-center">
+                        <h1 className="text-3xl font-bold text-gray-700">
+                            Dashboard
+                        </h1>
+                        <div className="flex items-center space-x-4">
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                className="p-2 border rounded shadow-sm focus:ring focus:ring-blue-300"
+                            />
+                            <button className="p-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition">
+                                <FiBell size={18} />
+                            </button>
+                            <button className="p-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition">
+                                <FiUser size={18} />
+                            </button>
                         </div>
+                    </header>
 
-                        {/* Products Sold Card */}
-                        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-                            <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                                Products Sold
-                            </h3>
-                            <p className="text-2xl font-bold text-blue-600 mt-2">
-                                320 Items
-                            </p>
-                        </div>
-
-                        {/* New Users Card */}
-                        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
-                            <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                                New Users
-                            </h3>
-                            <p className="text-2xl font-bold text-purple-600 mt-2">
-                                45 Users
-                            </p>
-                        </div>
+                    {/* Cards Section */}
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        {[
+                            {
+                                title: "Jumlah Produk",
+                                value: "120",
+                                icon: <FiPackage size={28} />,
+                            },
+                            {
+                                title: "Pesanan Baru",
+                                value: "15",
+                                icon: <FiShoppingCart size={28} />,
+                            },
+                            {
+                                title: "Pendapatan Bulanan",
+                                value: "Rp 20,000,000",
+                                icon: <FiDollarSign size={28} />,
+                            },
+                            {
+                                title: "Pengguna Terdaftar",
+                                value: "500",
+                                icon: <FiUsers size={28} />,
+                            },
+                        ].map((card, index) => (
+                            <div
+                                key={index}
+                                className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-200 ease-in-out"
+                            >
+                                <div className="flex items-center space-x-4">
+                                    <div className="text-blue-600">
+                                        {card.icon}
+                                    </div>
+                                    <div>
+                                        <h2 className="text-lg font-semibold text-gray-700">
+                                            {card.title}
+                                        </h2>
+                                        <p className="text-2xl font-bold text-gray-900">
+                                            {card.value}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
 
-                    {/* Section for Charts or Graphs */}
-                    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-4">
-                        <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">
-                            Sales Overview
-                        </h3>
-                        <div className="h-48 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                            {/* Placeholder for a chart (e.g., use a chart library like Chart.js) */}
-                            <p className="text-gray-500 dark:text-gray-400 text-center py-16">
-                                Chart will be here
-                            </p>
+                    {/* Charts and Tables Section */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Grafik Penjualan Placeholder */}
+                        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200">
+                            <h3 className="text-lg font-semibold text-gray-700 mb-4">
+                                Grafik Penjualan
+                            </h3>
+                            <div className="h-40 bg-gray-200 rounded animate-pulse"></div>
+                        </div>
+
+                        {/* Tabel Pesanan Terbaru */}
+                        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200">
+                            <h3 className="text-lg font-semibold text-gray-700 mb-4">
+                                Pesanan Terbaru
+                            </h3>
+                            <table className="w-full text-left text-gray-700">
+                                <thead>
+                                    <tr className="border-b">
+                                        <th className="p-2">Nomor Pesanan</th>
+                                        <th className="p-2">Nama Pelanggan</th>
+                                        <th className="p-2">Total</th>
+                                        <th className="p-2">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {[
+                                        {
+                                            id: "#00123",
+                                            customer: "Budi",
+                                            total: "Rp 1,200,000",
+                                            status: "Selesai",
+                                        },
+                                        {
+                                            id: "#00124",
+                                            customer: "Ani",
+                                            total: "Rp 800,000",
+                                            status: "Diproses",
+                                        },
+                                    ].map((order, index) => (
+                                        <tr
+                                            key={index}
+                                            className="hover:bg-gray-100 transition"
+                                        >
+                                            <td className="p-2">{order.id}</td>
+                                            <td className="p-2">
+                                                {order.customer}
+                                            </td>
+                                            <td className="p-2">
+                                                {order.total}
+                                            </td>
+                                            <td
+                                                className={`p-2 font-semibold ${
+                                                    order.status === "Selesai"
+                                                        ? "text-green-500"
+                                                        : "text-yellow-500"
+                                                }`}
+                                            >
+                                                {order.status}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
-                    {/* Recent Activity */}
-                    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                        <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-4">
-                            Recent Activity
-                        </h3>
-                        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-                            <li className="py-4">
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    John Doe purchased "Product A" -{" "}
-                                    <span className="font-bold">
-                                        Rp 300,000
-                                    </span>
-                                </p>
-                            </li>
-                            <li className="py-4">
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    Jane Smith signed up as a new user.
-                                </p>
-                            </li>
-                            <li className="py-4">
-                                <p className="text-gray-600 dark:text-gray-300">
-                                    Product B sold 10 items.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                </main>
             </div>
         </AuthenticatedLayout>
     );

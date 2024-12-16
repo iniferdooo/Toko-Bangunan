@@ -190,7 +190,7 @@ export default function Authenticated({ header, children }) {
                         <ul className="space-y-2 font-medium">
                             <li>
                                 <a
-                                    href={route('dashboard')}
+                                    href={route("dashboard")}
                                     className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                 >
                                     <svg
@@ -225,7 +225,7 @@ export default function Authenticated({ header, children }) {
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href={route("TambahBarang.index")}
                                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                                 >
                                     <svg
@@ -238,10 +238,7 @@ export default function Authenticated({ header, children }) {
                                         <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
                                     </svg>
                                     <span class="flex-1 ms-3 whitespace-nowrap">
-                                        Inbox
-                                    </span>
-                                    <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                        3
+                                        Tambah Barang
                                     </span>
                                 </a>
                             </li>

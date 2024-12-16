@@ -27,13 +27,12 @@ export default function BarangTerjual() {
         <AuthenticatedLayout
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Dashboard
+                    Barang Terjual
                 </h2>
             }
         >
             <Head title="Barang Terjual" />
 
-            <div class="p-4 sm:ml-64">
                 <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
             {barangTerjual.map((barang) => (
@@ -56,7 +55,6 @@ export default function BarangTerjual() {
             ))}
         </div>
                 </div>
-            </div>
         </AuthenticatedLayout>
     );
 }

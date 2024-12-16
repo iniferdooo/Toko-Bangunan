@@ -44,10 +44,42 @@ export default function Keranjang({ keranjang, totalPrice }) {
     };
 
     // Fungsi untuk proses pembayaran
-    const handlePayment = () => {
-        alert("Terima Kasih Telah Membeli Barang Kami");
-        closeModal();
-    };
+    
+const handlePayment = async () => {
+    try {
+        // Prepare the request data from cart
+        const requestData = {
+            keranjang: items.map((item) => ({
+                barang_id: item.barang.id,
+                jumlah: item.jumlah,
+                harga: item.barang.harga,
+            })),
+        };
+
+        // Send POST request
+        const response = await axios.post(
+            route("keranjang.checkout"),
+            requestData,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json", // Ensure server knows to send JSON
+                },
+            }
+        );
+
+        // Check if the response is successful
+        if (response.status === 200) {
+            console.log("Checkout completed:", response);
+        } else {
+            console.error("Error during checkout:", response);
+        }
+    } catch (error) {
+        console.error("Checkout failed:", error);
+    }
+};
+
+
 
     return (
         <div>
